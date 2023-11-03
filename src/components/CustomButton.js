@@ -1,0 +1,70 @@
+import {Text, TouchableOpacity, ActivityIndicator} from 'react-native';
+import React from 'react';
+import {Color, Fonts} from '../theme';
+import LinearGradient from 'react-native-linear-gradient';
+import {DARK_BLACK, SOCIAL_BLUE, SOCIAL_PINK} from '../assets/colors';
+// import {ActivityIndicator, Button} from 'react-native-paper';
+
+export default function CustomButton({label, onPress, loading}) {
+  const linearGradient = {
+    // flex: 1,
+    padding: 25,
+    marginBottom: 25,
+    borderRadius: 5,
+  };
+
+  return (
+    // <LinearGradient
+    //   colors={['#a0974288', '#e5d23f49', '#b7aa31']}
+    //   style={linearGradient}>
+    <TouchableOpacity
+      style={{
+        // flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: SOCIAL_BLUE,
+        borderRadius: 10,
+        marginTop: 30,
+        marginBottom: 15,
+        elevation: 3,
+        paddingVertical: 15,
+      }}
+      onPress={onPress}>
+      {loading ? (
+        <ActivityIndicator color={Color.white} />
+      ) : (
+        <Text style={{color: Color.white, fontSize: 18, fontWeight: '700'}}>
+          {label}
+        </Text>
+      )}
+    </TouchableOpacity>
+    // </LinearGradient>
+    // <Button
+    //   onPress={onPress}
+    //   loading={loading}
+    //   mode="contained"
+    //   dark
+    //   contentStyle={{
+    //     padding: 5,
+    //   }}
+    //   labelStyle={{
+    //     fontFamily: Fonts.primaryBold,
+    //     fontSize: 18,
+    //     fontWeight: '800',
+    //     color: Color.primary,
+    //   }}
+    //   style={{
+    //     backgroundColor: Color.secondary,
+    //     borderRadius: 10,
+    //     marginTop: 30,
+    //     marginBottom: 15,
+    //     elevation: 3,
+    //   }}>
+    //   {label}
+    // </Button>
+  );
+}
+
+// style={{
+
+//           }}
